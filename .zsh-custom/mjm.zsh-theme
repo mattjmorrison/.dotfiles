@@ -22,11 +22,16 @@
 # The prompt
 PROMPT='%{$fg[magenta]%}[%c] %{$reset_color%}'
 
-python_version=$(python -V 2>&1)
+gemset=$(rvm current | awk '{split($0,a,"@");print a[2]}')
+virtualenv=$(basename "$VIRTUAL_ENV")
 
 # The right-hand prompt
 VIRTUAL_ENV_DISABLE_PROMPT=1
-RPROMPT=' %{$fg[green]%}$python_version@$(basename "$VIRTUAL_ENV")%{$reset_color%} %{$fg[red]%}$(~/.rvm/bin/rvm-prompt)%{$reset_color%} %{$fg[magenta]%}$(git_prompt_info)%{$reset_color%}$(git_prompt_status)%{$reset_color%}'
+
+# TODO set some kind of hooks for virtualenvwrapper and rvm so the prompt is regenerated when
+# a gemset and/or virtualenv changes
+
+RPROMPT=' %{$fg[green]%}$virtualenv%{$reset_color%} %{$fg[red]%}$gemset%{$reset_color%} %{$fg[magenta]%}$(git_prompt_info)%{$reset_color%}$(git_prompt_status)%{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" ☁  %{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
