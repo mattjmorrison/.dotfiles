@@ -1,4 +1,5 @@
 export TERM=xterm-256color
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -8,7 +9,8 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="wedisagree"
 
-alias e=emacs
+export ALTERNATE_EDITOR=""
+alias e='emacsclient -tnw'
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
