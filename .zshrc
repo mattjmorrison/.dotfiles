@@ -11,7 +11,9 @@ alias e='emacsclient -tnw'
 
 RPROMPT='%{$fg[yellow]%}$(~/.rvm/bin/rvm-prompt)%{$reset_color%}%{$fg[magenta]%}$(git_prompt_info)%{$reset_color%}$(git_prompt_status)%{$reset_color%}'
 
-source /home/vagrant/.rvm/scripts/rvm
-source /usr/local/bin/virtualenvwrapper.sh
+source $HOME/.rvm/scripts/rvm
+
 source $ZSH/oh-my-zsh.sh
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$HOME/.rvm/bin
+[[ -a /usr/local/share/python/virtualenvwrapper.sh ]] && source /usr/local/share/python/virtualenvwrapper.sh
+[[ -a /usr/local/bin/virtualenvwrapper.sh ]] && source /usr/local/bin/virtualenvwrapper.sh
