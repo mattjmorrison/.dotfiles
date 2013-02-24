@@ -23,7 +23,7 @@
 PROMPT='%{$fg[magenta]%}[%c] %{$reset_color%}'
 
 gemset_prompt(){
-  $(rvm current | awk '{split($0,a,"@");print a[2]}')
+  rvm current | awk '{split($0,a,"@");print a[2]}'
 }
 virtualenv_prompt(){
   basename "$VIRTUAL_ENV"
