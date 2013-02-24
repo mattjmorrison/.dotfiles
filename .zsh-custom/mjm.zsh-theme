@@ -22,16 +22,17 @@
 # The prompt
 PROMPT='%{$fg[magenta]%}[%c] %{$reset_color%}'
 
-gemset=$(rvm current | awk '{split($0,a,"@");print a[2]}')
-virtualenv=$(basename "$VIRTUAL_ENV")
+gemset_prompt(){
+  $(rvm current | awk '{split($0,a,"@");print a[2]}')
+}
+virtualenv_prompt(){
+  basename "$VIRTUAL_ENV"
+}
 
 # The right-hand prompt
 VIRTUAL_ENV_DISABLE_PROMPT=1
 
-# TODO set some kind of hooks for virtualenvwrapper and rvm so the prompt is regenerated when
-# a gemset and/or virtualenv changes
-
-RPROMPT=' %{$fg[green]%}$virtualenv%{$reset_color%} %{$fg[red]%}$gemset%{$reset_color%} %{$fg[magenta]%}$(git_prompt_info)%{$reset_color%}$(git_prompt_status)%{$reset_color%}'
+RPROMPT=' %{$fg[green]%}$(virtualenv_prompt)%{$reset_color%} %{$fg[red]%}$(gemset_prompt)%{$reset_color%} %{$fg[magenta]%}$(git_prompt_info)%{$reset_color%}$(git_prompt_status)%{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" ☁  %{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
