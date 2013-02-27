@@ -9,7 +9,10 @@ alias e='emacsclient -tnw'
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/.rvm/bin
 source $HOME/.rvm/scripts/rvm
 
+export WORKON_HOME=$HOME/virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+export PIP_VIRTUALENV_BASE=$HOME/virtualenvs
+
 plugins=(virtualenv npm)
 
 source $ZSH/oh-my-zsh.sh
-
