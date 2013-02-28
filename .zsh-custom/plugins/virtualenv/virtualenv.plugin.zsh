@@ -5,10 +5,10 @@ workon_virtualenv() {
   if [[ -d .git ]]
   then
      VENV_CUR_DIR="${PWD##*/}"
-     if [[ -a ~/virtualenvs/$VENV_CUR_DIR ]]
+     if [[ -a ~/.virtualenvs/$VENV_CUR_DIR ]]
      then
        deactivate > /dev/null 2>&1
-       source ~/virtualenvs/$VENV_CUR_DIR/bin/activate
+       source ~/.virtualenvs/$VENV_CUR_DIR/bin/activate
      fi
   fi
 }
