@@ -13,3 +13,5 @@ plugins=(virtualenv npm)
 
 source $ZSH/oh-my-zsh.sh
 
+unsetopt extendedglob
+alias rake="noglob rake"
