@@ -5,7 +5,7 @@ ZSH_CUSTOM=$HOME/.zsh-custom
 ZSH_THEME="mjm"
 
 export ALTERNATE_EDITOR=""
-alias e='emacsclient -tnw'
+alias e=emacs
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/.rvm/bin
 source $HOME/.rvm/scripts/rvm
 
