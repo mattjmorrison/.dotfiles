@@ -1,1 +1,1 @@
-/Users/toranb/.vim/gvimrc
+.vim/vimrc
